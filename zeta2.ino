@@ -6,7 +6,7 @@
 #include "BMP085.h"
 #include "I2Cdev.h"
 #include "MPU6050.h"
-asd
+
     BMP085 pressure_m;
 MPU6050 accelgyro;
 

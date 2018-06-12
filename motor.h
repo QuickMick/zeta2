@@ -15,7 +15,7 @@ class Motor
     void set(int speed);
 
     int getSpeed() { return this->speed; }
-    int setSpeed(int speed) { this->speed = speed; }
+    //int setSpeed(int speed) { this->speed = speed; }
 
   protected:
     void step(int this_step);
