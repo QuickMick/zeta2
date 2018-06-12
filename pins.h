@@ -21,6 +21,9 @@
 /** Fan */
 #define PIN_FAN A6 // (D20)
 
+/** Zero Position Sensor */
+#define PIN_ZEROING_SENSOR 13
+
 /** DS18B20 Temperature Sensor - OneWire */
 #define PIN_MOTOR_TEMPERATURE 2 //ADDRES: R=28 61 64 11 BD 93 D5 1
 
@@ -34,9 +37,6 @@
 /** Port for I2C Communication to Raspberry PI - BUS 1*/
 #define I2C_PI_SCL A18 // (D29)
 #define I2c_PI_SDA A19 // (D30)
-
-/** Zero Position Sensor */
-#define PIN_ZEROING_SENSOR 13
 
 /** Port for I2C Communication to peripherals, e.g. GY-88 - BUS 0 */
 #define I2C_PERIPHERY_SCL A5 // (D19)

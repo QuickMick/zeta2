@@ -1,12 +1,16 @@
 #include <Wire.h>
 #include <TeensyThreads.h>
 #include "pins.h"
+#include "Stepper.h"
+#include "Motor.h"
 #include "BMP085.h"
 #include "I2Cdev.h"
 #include "MPU6050.h"
-
-BMP085 pressure_m;
+asd
+    BMP085 pressure_m;
 MPU6050 accelgyro;
+
+Stepper lidarStepper(PIN_STEPPER_0, PIN_STEPPER_1, PIN_STEPPER_2, PIN_STEPPER_3);
 
 bool blinkState = false;
 
@@ -25,24 +29,53 @@ orange: weiß von tfmini distance-sensor rx
 void setup()
 {
   Serial.begin(9600);
-  Wire.begin();
+  Serial1.begin(115200); // TFMINI serial
+  Wire.begin();          // I2C
+
+  while (!Serial && !Serial1)
+  {
+  }
+
+  /**
+   *  configure OUTPUT pins
+   */
+  pinMode(PIN_ENABLE_LEFT, OUTPUT);
+  pinMode(PIN_MOTOR_LEFT_A, OUTPUT);
+  pinMode(PIN_MOTOR_LEFT_B, OUTPUT);
+
+  pinMode(PIN_ENABLE_RIGHT, OUTPUT);
+  pinMode(PIN_MOTOR_RIGHT_A, OUTPUT);
+  pinMode(PIN_MOTOR_RIGHT_B, OUTPUT);
+
+  pinMode(PIN_FAN, OUTPUT);
+
+  lidarStepper.begin();
+
+  /**
+   *  configure INPUT pins
+   */
+  pinMode(PIN_ZEROING_SENSOR, INPUT);
+  pinMode(PIN_ANALOG_DISTANCE, INPUT);
+
+  /**
+   * Start Sensor connections
+   */
   Serial.println("Initializing I2C devices...");
   accelgyro.initialize();
-
   // verify connection
   Serial.println("Testing device connections...");
   Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
-
   pressure_m.bmp085Calibration();
 
+  /**
+ * Start Threads
+ */
   threads.addThread(blinkthread);
-  // configure Arduino LED for
-  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop()
 {
-  float temperature = pressure_m.bmp085GetTemperature(); //MUST be called first
+  /*  float temperature = pressure_m.bmp085GetTemperature(); //MUST be called first
   float pressure = pressure_m.bmp085GetPressure();
   float altitude = pressure_m.calcAltitude(pressure);
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
@@ -82,7 +115,7 @@ void loop()
 
   // blink LED to indicate activity
   blinkState = !blinkState;
-  digitalWrite(LED_PIN, blinkState);
+  digitalWrite(LED_PIN, blinkState);*/
 }
 
 void blinkthread()
@@ -100,10 +133,10 @@ void blinkthread()
     altitude = pressure_m.calcAltitude(pressure);
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
-    digitalWrite(LED, HIGH);
+    /* digitalWrite(LED, HIGH);
     threads.delay(150);
     digitalWrite(LED, LOW);
-    threads.delay(150);
+    threads.delay(150);*/
 
     // threads.yield();
   }
