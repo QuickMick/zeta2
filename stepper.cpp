@@ -17,23 +17,32 @@ void Stepper::begin()
     pinMode(this->pin2, OUTPUT);
     pinMode(this->pin3, OUTPUT);
 }
+void Stepper::previous()
+{
+    this->step(this->currentStep);
+    this->currentStep--;
+
+    if (this->currentStep == -1)
+    {
+        this->currentStep = 7;
+    }
+}
 
 void Stepper::next()
 {
     this->step(this->currentStep);
-    this->currentStep--;
-}
-void Stepper::previous()
-{
-    this->step(this->currentStep);
     this->currentStep++;
+    if (this->currentStep == 8)
+    {
+        this->currentStep = 0;
+    }
 }
 
 void Stepper::step(int step)
 {
     switch (step)
     {
-    case -1:
+    case -2:
         digitalWrite(pin0, LOW); //BLU
         digitalWrite(pin1, LOW); //Pink
         digitalWrite(pin2, LOW); //Yellow

@@ -13,10 +13,10 @@
 #define PIN_MOTOR_RIGHT_B 12
 
 /** LIDAR Stepper Motor */
-#define PIN_STEPPER_0 A0 // (D14)
-#define PIN_STEPPER_1 A1 // (D15)
-#define PIN_STEPPER_2 A2 // (D16)
-#define PIN_STEPPER_3 A3 // (D17)
+#define PIN_STEPPER_0 14 //A0 // (D14)
+#define PIN_STEPPER_1 15 //A1 // (D15)
+#define PIN_STEPPER_2 16 //A2 // (D16)
+#define PIN_STEPPER_3 17 //A3 // (D17)
 
 /** Fan */
 #define PIN_FAN A6 // (D20)
@@ -26,7 +26,7 @@
 
 /** DS18B20 Temperature Sensor - OneWire */
 #define PIN_MOTOR_TEMPERATURE 2 //ADDRES: R=28 61 64 11 BD 93 D5 1
-
+//R=28 61 64 11 BD 93 D5 1 
 /** Analog Distance Sensor */
 #define PIN_ANALOG_DISTANCE A9 // (D23)
 

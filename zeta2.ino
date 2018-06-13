@@ -1,18 +1,25 @@
 #include <Wire.h>
 #include <TeensyThreads.h>
+#include <OneWire.h>
 #include "pins.h"
-#include "Stepper.h"
-#include "Motor.h"
+#include "stepper.h"
+#include "motor.h"
+#include "fan.h"
 #include "BMP085.h"
 #include "I2Cdev.h"
 #include "MPU6050.h"
+#include "TFMini.h"
 
-    BMP085 pressure_m;
+BMP085 pressure_m;
 MPU6050 accelgyro;
+TFMini tfmini;
 
 Stepper lidarStepper(PIN_STEPPER_0, PIN_STEPPER_1, PIN_STEPPER_2, PIN_STEPPER_3);
+Motor motorLeft(PIN_MOTOR_LEFT_A, PIN_MOTOR_LEFT_B, PIN_ENABLE_LEFT);
+Motor motorRight(PIN_MOTOR_RIGHT_A, PIN_MOTOR_RIGHT_B, PIN_ENABLE_RIGHT);
+Fan fan(PIN_FAN);
 
-bool blinkState = false;
+OneWire ds(PIN_MOTOR_TEMPERATURE); // on pin 10
 
 /*
 gelb: gyp-distance-sensor
@@ -25,31 +32,27 @@ orange: weiß von tfmini distance-sensor rx
 800 ma alle 4motoren
 23ma teensy
 */
-
+byte addr[8];
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(9600);    // debug serial
   Serial1.begin(115200); // TFMINI serial
   Wire.begin();          // I2C
 
+  // wait till serial is here
   while (!Serial && !Serial1)
   {
   }
 
+  tfmini.begin(&Serial1);
+
   /**
    *  configure OUTPUT pins
    */
-  pinMode(PIN_ENABLE_LEFT, OUTPUT);
-  pinMode(PIN_MOTOR_LEFT_A, OUTPUT);
-  pinMode(PIN_MOTOR_LEFT_B, OUTPUT);
-
-  pinMode(PIN_ENABLE_RIGHT, OUTPUT);
-  pinMode(PIN_MOTOR_RIGHT_A, OUTPUT);
-  pinMode(PIN_MOTOR_RIGHT_B, OUTPUT);
-
-  pinMode(PIN_FAN, OUTPUT);
-
+  fan.begin();
   lidarStepper.begin();
+  motorLeft.begin();
+  motorRight.begin();
 
   /**
    *  configure INPUT pins
@@ -68,70 +71,104 @@ void setup()
   pressure_m.bmp085Calibration();
 
   /**
- * Start Threads
- */
+   * Start Threads
+   */
   threads.addThread(blinkthread);
+ // threads.addThread(stepMotorTest);
+
+  
+  ds.search(addr);
+
+  Serial.print("R=");
+  for (int i = 0; i < 8; i++)
+  {
+    Serial.print(addr[i], HEX);
+    Serial.print(" ");
+  }
+
+  if (OneWire::crc8(addr, 7) != addr[7])
+  {
+    Serial.print("CRC is not valid!\n");
+    return;
+  }
+
+  ds.select(addr);
+  ds.write(0x44, 1); // start conversion, with parasite power on at the end
+  delay(1000);
+  ds.reset();
+  ds.select(addr);
+  ds.write(0xBE); // Read Scratchpad
 }
 
 void loop()
 {
-  /*  float temperature = pressure_m.bmp085GetTemperature(); //MUST be called first
-  float pressure = pressure_m.bmp085GetPressure();
-  float altitude = pressure_m.calcAltitude(pressure);
-  accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-  Serial.print("Temperature: ");
-  Serial.print(temperature, 2); //display 2 decimal places
-  Serial.println("deg C");
+ lidarStepper.next();
+    delay(1);
+}
 
-  Serial.print("Pressure: ");
-  Serial.print(pressure, 0); //whole number only.
-  Serial.println(" Pa");
+void stepMotorTest()
+{
+  while (1)
+  {
+     Serial.print(millis());
+      Serial.print(" ");
+     Serial.print("R=");
+  for (int i = 0; i < 8; i++)
+  {
+    Serial.print(addr[i], HEX);
+    Serial.print(" ");
+  }
+ 
+   Serial.println(" ");
+   delay(1000);
+  threads.delay(50);
+  
+  /*  for(int i=0;i<256;i++){
+    lidarStepper.next();
+    delay(1);
+    }*/
+  /*  Serial.print(millis());
+    Serial.print("STEP ");
+   
+    Serial.print(lidarStepper.currentStep);*/
 
-  Serial.print("Altitude: ");
-  Serial.print(altitude, 2); //display 2 decimal places
-  Serial.println(" M");
-
-  Serial.println(); //line break
-
-  delay(1000); //wait a second and get values again.
-
-  // these methods (and a few others) are also available
-  //accelgyro.getAcceleration(&ax, &ay, &az);
-  //accelgyro.getRotation(&gx, &gy, &gz);
-
-  // display tab-separated accel/gyro x/y/z values
-  Serial.print("a/g:\t");
-  Serial.print(ax);
-  Serial.print("\t");
-  Serial.print(ay);
-  Serial.print("\t");
-  Serial.print(az);
-  Serial.print("\t");
-  Serial.print(gx);
-  Serial.print("\t");
-  Serial.print(gy);
-  Serial.print("\t");
-  Serial.println(gz);
-
-  // blink LED to indicate activity
-  blinkState = !blinkState;
-  digitalWrite(LED_PIN, blinkState);*/
+  }
 }
 
 void blinkthread()
 {
+ 
   int16_t ax, ay, az;
   int16_t gx, gy, gz;
   float temperature;
   float pressure;
   float altitude;
+  byte data[12];
+
   while (1)
   {
+    Serial.print("P=");
+    for (int i = 0; i < 9; i++)
+    { // we need 9 bytes
+      data[i] = ds.read();
+      Serial.print(data[i], HEX);
+      Serial.print(" ");
+    }
+    Serial.print(" CRC=");
+    Serial.print(OneWire::crc8(data, 8), HEX);
+    Serial.println();
 
     temperature = pressure_m.bmp085GetTemperature(); //MUST be called first
     pressure = pressure_m.bmp085GetPressure();
     altitude = pressure_m.calcAltitude(pressure);
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    motorLeft.set(255);
+    motorRight.set(255);
+    fan.update(1000);
+
+    Serial.print("ZEROING: ");
+    Serial.print(digitalRead(PIN_ZEROING_SENSOR));
+    Serial.println();
 
     /* digitalWrite(LED, HIGH);
     threads.delay(150);
@@ -139,6 +176,43 @@ void blinkthread()
     threads.delay(150);*/
 
     // threads.yield();
+
+    uint16_t dist = tfmini.getDistance();
+    uint16_t strength = tfmini.getRecentSignalStrength();
+    // Display the measurement
+    Serial.print(dist);
+    Serial.print(" cm      sigstr: ");
+    Serial.println(strength);
+
+    Serial.print("Temperature: ");
+    Serial.print(temperature, 2); //display 2 decimal places
+    Serial.println("deg C");
+
+    Serial.print("Pressure: ");
+    Serial.print(pressure, 0); //whole number only.
+    Serial.println(" Pa");
+
+    Serial.print("Altitude: ");
+    Serial.print(altitude, 2); //display 2 decimal places
+    Serial.println(" M");
+
+    Serial.println(); //line break
+
+    // display tab-separated accel/gyro x/y/z values
+    Serial.print("a/g:\t");
+    Serial.print(ax);
+    Serial.print("\t");
+    Serial.print(ay);
+    Serial.print("\t");
+    Serial.print(az);
+    Serial.print("\t");
+    Serial.print(gx);
+    Serial.print("\t");
+    Serial.print(gy);
+    Serial.print("\t");
+    Serial.println(gz);
+
+    threads.delay(500);
   }
 }
 
