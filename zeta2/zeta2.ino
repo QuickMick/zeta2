@@ -20,7 +20,7 @@ Motor motorLeft(PIN_MOTOR_LEFT_A, PIN_MOTOR_LEFT_B, PIN_ENABLE_LEFT);
 Motor motorRight(PIN_MOTOR_RIGHT_A, PIN_MOTOR_RIGHT_B, PIN_ENABLE_RIGHT);
 Fan fan(PIN_FAN);
 
-OneWire ds(PIN_MOTOR_TEMPERATURE); 
+OneWire ds(PIN_MOTOR_TEMPERATURE);
 DallasTemperature sensors(&ds);
 DeviceAddress insideThermometer = {0x28, 0x61, 0x64, 0x11, 0xBD, 0x93, 0xD5, 0x1};
 
@@ -76,9 +76,9 @@ void setup()
   /**
    * Start Threads
    */
- // threads.addThread(blinkthread);
+  // threads.addThread(blinkthread);
   // threads.addThread(stepMotorTest);
-/*
+  /*
   ds.search(addr);
 
   Serial.print("R=");
@@ -101,32 +101,36 @@ void setup()
   ds.select(addr);
   ds.write(0xBE); // Read Scratchpad
   */
-  sensors.begin(); 
+  sensors.begin();
   sensors.setResolution(insideThermometer, 9);
-    if (sensors.isParasitePowerMode()) Serial.println("Dallas ParasitePower: ON");
-  else Serial.println("Dallas ParasitePower: OFF");
-    if (!sensors.getAddress(insideThermometer, 0)) Serial.println("Unable to find address for Device 0"); 
+  if (sensors.isParasitePowerMode())
+    Serial.println("Dallas ParasitePower: ON");
+  else
+    Serial.println("Dallas ParasitePower: OFF");
+  if (!sensors.getAddress(insideThermometer, 0))
+    Serial.println("Unable to find address for Device 0");
 }
 
 void loop()
 {
- /* lidarStepper.next();
-  delay(1);*/
+  lidarStepper.next();
+  delay(1);
 
-   Serial.print(" Requesting temperatures..."); 
-   int x = millis();
- sensors.requestTemperatures(); // Send the command to get temperature readings 
-int x2=millis();
-/********************************************************************/
- Serial.print("Temperature is: "); 
- Serial.print(sensors.getTempC(insideThermometer));//sensors.getTempCByIndex(0)); // Why "byIndex"?  
- Serial.print("    time:");
- Serial.print(x2-x);
-   // You can have more than one DS18B20 on the same bus.  
-   // 0 refers to the first IC on the wire 
+  /*Serial.print(" Requesting temperatures...");
+  int x = millis();
+  sensors.requestTemperatures(); // Send the command to get temperature readings
+  int x2 = millis();
 
-    Serial.println("  DONE"); 
-   delay(1000);
+  Serial.print("Temperature is: ");
+  Serial.print(sensors.getTempC(insideThermometer)); //sensors.getTempCByIndex(0)); // Why "byIndex"?
+  Serial.print("    time:");
+  Serial.print(x2 - x);
+  // You can have more than one DS18B20 on the same bus.
+  // 0 refers to the first IC on the wire
+
+  Serial.println("  DONE");
+  delay(1000);
+  */
 }
 
 void stepMotorTest()
