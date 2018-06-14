@@ -26,7 +26,7 @@
 
 /** DS18B20 Temperature Sensor - OneWire */
 #define PIN_MOTOR_TEMPERATURE 2 //ADDRES: R=28 61 64 11 BD 93 D5 1
-//R=28 61 64 11 BD 93 D5 1 
+
 /** Analog Distance Sensor */
 #define PIN_ANALOG_DISTANCE A9 // (D23)
 

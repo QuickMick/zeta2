@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <TeensyThreads.h>
 #include <OneWire.h>
+#include <DallasTemperature.h>
 #include "pins.h"
 #include "stepper.h"
 #include "motor.h"
@@ -19,7 +20,9 @@ Motor motorLeft(PIN_MOTOR_LEFT_A, PIN_MOTOR_LEFT_B, PIN_ENABLE_LEFT);
 Motor motorRight(PIN_MOTOR_RIGHT_A, PIN_MOTOR_RIGHT_B, PIN_ENABLE_RIGHT);
 Fan fan(PIN_FAN);
 
-OneWire ds(PIN_MOTOR_TEMPERATURE); // on pin 10
+OneWire ds(PIN_MOTOR_TEMPERATURE); 
+DallasTemperature sensors(&ds);
+DeviceAddress insideThermometer = {0x28, 0x61, 0x64, 0x11, 0xBD, 0x93, 0xD5, 0x1};
 
 /*
 gelb: gyp-distance-sensor
@@ -29,7 +32,7 @@ orange: weiß von tfmini distance-sensor rx
 */
 
 /*
-800 ma alle 4motoren
+ 1,1 ma alle 4motoren+stepper+fan
 23ma teensy
 */
 byte addr[8];
@@ -73,10 +76,9 @@ void setup()
   /**
    * Start Threads
    */
-  threads.addThread(blinkthread);
- // threads.addThread(stepMotorTest);
-
-  
+ // threads.addThread(blinkthread);
+  // threads.addThread(stepMotorTest);
+/*
   ds.search(addr);
 
   Serial.print("R=");
@@ -98,46 +100,66 @@ void setup()
   ds.reset();
   ds.select(addr);
   ds.write(0xBE); // Read Scratchpad
+  */
+  sensors.begin(); 
+  sensors.setResolution(insideThermometer, 9);
+    if (sensors.isParasitePowerMode()) Serial.println("Dallas ParasitePower: ON");
+  else Serial.println("Dallas ParasitePower: OFF");
+    if (!sensors.getAddress(insideThermometer, 0)) Serial.println("Unable to find address for Device 0"); 
 }
 
 void loop()
 {
- lidarStepper.next();
-    delay(1);
+ /* lidarStepper.next();
+  delay(1);*/
+
+   Serial.print(" Requesting temperatures..."); 
+   int x = millis();
+ sensors.requestTemperatures(); // Send the command to get temperature readings 
+int x2=millis();
+/********************************************************************/
+ Serial.print("Temperature is: "); 
+ Serial.print(sensors.getTempC(insideThermometer));//sensors.getTempCByIndex(0)); // Why "byIndex"?  
+ Serial.print("    time:");
+ Serial.print(x2-x);
+   // You can have more than one DS18B20 on the same bus.  
+   // 0 refers to the first IC on the wire 
+
+    Serial.println("  DONE"); 
+   delay(1000);
 }
 
 void stepMotorTest()
 {
   while (1)
   {
-     Serial.print(millis());
-      Serial.print(" ");
-     Serial.print("R=");
-  for (int i = 0; i < 8; i++)
-  {
-    Serial.print(addr[i], HEX);
+    Serial.print(millis());
     Serial.print(" ");
-  }
- 
-   Serial.println(" ");
-   delay(1000);
-  threads.delay(50);
-  
-  /*  for(int i=0;i<256;i++){
+    Serial.print("R=");
+    for (int i = 0; i < 8; i++)
+    {
+      Serial.print(addr[i], HEX);
+      Serial.print(" ");
+    }
+
+    Serial.println(" ");
+    delay(1000);
+    threads.delay(50);
+
+    /*  for(int i=0;i<256;i++){
     lidarStepper.next();
     delay(1);
     }*/
-  /*  Serial.print(millis());
+    /*  Serial.print(millis());
     Serial.print("STEP ");
    
     Serial.print(lidarStepper.currentStep);*/
-
   }
 }
 
 void blinkthread()
 {
- 
+
   int16_t ax, ay, az;
   int16_t gx, gy, gz;
   float temperature;
