@@ -14,7 +14,7 @@ const http = require('http');
 const index = require('./routes/index');
 const users = require('./routes/users');
 
-const GameServer = require('./server/server');
+const SocketServer = require('./server/server');
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -24,11 +24,11 @@ function normalizePort(val) {
 }
 
 class App {
-  wastelandworld
+
   constructor() {
     this.app = null;
     this.server = null;
-    this.gameServer = null;
+    this.socketServer = null;
   }
 
   run() {
@@ -59,8 +59,8 @@ class App {
     this.app.set('port', port);
     this.server = http.createServer(this.app);
 
-    this.gameServer = new GameServer();
-    this.gameServer.run(this.server);
+    this.socketServer = new SocketServer();
+    this.socketServer.run(this.server);
 
     this.server.listen(port);
     this.server.on('error', (error) => {
@@ -98,14 +98,14 @@ class App {
     this.app.use('/users', users);
 
     // catch 404 and forward to error handler
-    this.app.use(function (req, res, next) {
+    this.app.use(function(req, res, next) {
       var err = new Error('Not Found');
       err.status = 404;
       next(err);
     });
 
     // error handler
-    this.app.use(function (err, req, res, next) {
+    this.app.use(function(err, req, res, next) {
       // set locals, only providing error in development
       res.locals.message = err.message;
       res.locals.error = req.app.get('env') === 'development' ? err : {};

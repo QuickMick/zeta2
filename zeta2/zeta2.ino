@@ -113,6 +113,9 @@ void setup()
 
 void loop()
 {
+
+analogRead(PIN_ZEROING_SENSOR);
+  return;
   lidarStepper.next();
   delay(1);
 

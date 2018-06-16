@@ -1,8 +1,8 @@
 {
-    "indent_size": 4,
+    "indent_size": 2,
     "indent_char": " ",
-    "format.onsave":true,
+    "format.onsave": true,
     "css": {
-      "indent_size": 2
+        "indent_size": 2
     }
-  }
+}

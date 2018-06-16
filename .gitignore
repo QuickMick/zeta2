@@ -30,5 +30,6 @@
 *.exe
 *.out
 *.app
+
 zeta2server/node_modules
 zeta2server/public/javascripts/bundle.js
