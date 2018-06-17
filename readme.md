@@ -12,6 +12,20 @@ GY-88: 0.3 mA
 pin input draw (zero position): 0.1 mA
 
 
+kaufen:IRLML2502
+
+vllt au den:
+IRF3708
+
+
+
+
+
+
+
+---------old----------
+
+
 
 S8550 -< PNP
 https://alltransistors.com/transistor.php?transistor=52917
