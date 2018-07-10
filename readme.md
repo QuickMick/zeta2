@@ -13,10 +13,20 @@ pin input draw (zero position): 0.1 mA
 
 
 kaufen:IRLML2502
+schalter
+lötsinn
+kabel?
+kondensator 47uf, 4.7uf 10uf
+0.1uf
+470uf
+steckbrett
+
+stepper: min 47uf
 
 vllt au den:
 IRF3708
 
+crompzange
 
 
 

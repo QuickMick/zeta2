@@ -32,7 +32,7 @@ void Motor::set(int speed)
     {
         digitalWrite(this->pinA, 0);
         digitalWrite(this->pinB, 1);
-        digitalWrite(this->enable, speed);
+        analogWrite(this->enable, speed);
         return;
     }
 
@@ -40,12 +40,12 @@ void Motor::set(int speed)
     {
         digitalWrite(this->pinA, 1);
         digitalWrite(this->pinB, 0);
-        digitalWrite(this->enable, speed);
+        analogWrite(this->enable, speed);
         return;
     }
 
     this->speed = 0;
     digitalWrite(this->pinA, 0);
     digitalWrite(this->pinB, 0);
-    digitalWrite(this->enable, 0);
+    analogWrite(this->enable, 0);
 }

@@ -12,10 +12,10 @@
 #include "TFMini.h"
 
 BMP085 pressure_m;
-MPU6050 accelgyro;
+MPU6050 accelgyro;  
 TFMini tfmini;
 
-Stepper lidarStepper(PIN_STEPPER_0, PIN_STEPPER_1, PIN_STEPPER_2, PIN_STEPPER_3);
+//Stepper lidarStepper(PIN_STEPPER_0, PIN_STEPPER_1, PIN_STEPPER_2, PIN_STEPPER_3);
 Motor motorLeft(PIN_MOTOR_LEFT_A, PIN_MOTOR_LEFT_B, PIN_ENABLE_LEFT);
 Motor motorRight(PIN_MOTOR_RIGHT_A, PIN_MOTOR_RIGHT_B, PIN_ENABLE_RIGHT);
 Fan fan(PIN_FAN);
@@ -53,7 +53,7 @@ void setup()
    *  configure OUTPUT pins
    */
   fan.begin();
-  lidarStepper.begin();
+ // lidarStepper.begin();
   motorLeft.begin();
   motorRight.begin();
 
@@ -76,7 +76,7 @@ void setup()
   /**
    * Start Threads
    */
-  // threads.addThread(blinkthread);
+ //  threads.addThread(blinkthread);
   // threads.addThread(stepMotorTest);
   /*
   ds.search(addr);
@@ -114,12 +114,12 @@ void setup()
 void loop()
 {
 
-analogRead(PIN_ZEROING_SENSOR);
-  return;
-  lidarStepper.next();
-  delay(1);
+//analogRead(PIN_ZEROING_SENSOR);
+  
+  //lidarStepper.next();
+  
 
-  /*Serial.print(" Requesting temperatures...");
+  Serial.print(" Requesting temperatures...");
   int x = millis();
   sensors.requestTemperatures(); // Send the command to get temperature readings
   int x2 = millis();
@@ -133,7 +133,55 @@ analogRead(PIN_ZEROING_SENSOR);
 
   Serial.println("  DONE");
   delay(1000);
-  */
+
+
+  int16_t ax, ay, az;
+  int16_t gx, gy, gz;
+  float temperature;
+  float pressure;
+  float altitude;
+
+
+
+    temperature = pressure_m.bmp085GetTemperature(); //MUST be called first
+    pressure = pressure_m.bmp085GetPressure();
+    altitude = pressure_m.calcAltitude(pressure);
+    accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    motorLeft.set(255);
+    motorRight.set(255);
+    fan.update(1000);
+
+    Serial.print("ZEROING: ");
+    Serial.print(digitalRead(PIN_ZEROING_SENSOR));
+    Serial.println();
+    Serial.print("Temperature: ");
+    Serial.print(temperature, 2); //display 2 decimal places
+    Serial.println("deg C");
+
+    Serial.print("Pressure: ");
+    Serial.print(pressure, 0); //whole number only.
+    Serial.println(" Pa");
+
+    Serial.print("Altitude: ");
+    Serial.print(altitude, 2); //display 2 decimal places
+    Serial.println(" M");
+
+    Serial.println(); //line break
+
+    // display tab-separated accel/gyro x/y/z values
+    Serial.print("a/g:\t");
+    Serial.print(ax);
+    Serial.print("\t");
+    Serial.print(ay);
+    Serial.print("\t");
+    Serial.print(az);
+    Serial.print("\t");
+    Serial.print(gx);
+    Serial.print("\t");
+    Serial.print(gy);
+    Serial.print("\t");
+    Serial.println(gz);
+  
 }
 
 void stepMotorTest()

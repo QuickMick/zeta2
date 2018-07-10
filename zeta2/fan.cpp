@@ -26,18 +26,22 @@ void Fan::update(float temperature)
     if (temperature < 20)
     {
         analogWrite(this->pin, 0);
+          return;
     }
     else if (temperature < 30)
     {
         analogWrite(this->pin, 50);
+          return;
     }
     else if (temperature < 40)
     {
         analogWrite(this->pin, 100);
+          return;
     }
     else if (temperature < 50)
     {
         analogWrite(this->pin, 150);
+        return;
     }
     analogWrite(this->pin, 255);
 }

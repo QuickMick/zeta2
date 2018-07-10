@@ -7,7 +7,6 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-//process.env['DEBUG'] = '*';
 const debug = require('debug')('wastelandworld:app');
 const http = require('http');
 

@@ -4,18 +4,7 @@ const Ticks = require('./../core/ticks.json');
 const Packages = require("./../core/com");
 const UpdateQueue = require('./../core/updatequeue');
 
-const EventEmitter3 = require('eventemitter3');
-
-//var GameState = require("./gamestate");
-
-//var EntityManager = require("./entitymanager");
-
-//TODO: in evts json
-const EVT_ON_CLIENT_VALUE_REJECTED = "onClientValueRejected";
-const EVT_ON_CLIENT_VALUE_UPDATE = "onClientValueUpdate";
-
-const EVT_ON_CLIENT_ACCEPTED = "onClientAccepted";
-const EVT_ON_INIT_GAME = "onInitGame";
+const EventEmitter = require('events');
 
 const EVT_ON_CLIENT_CONNECTED = "onClientConnected";
 const EVT_ON_CLIENT_DISCONNECTED = "onClientDisconnected";
@@ -28,21 +17,10 @@ const EVT_ON_SERVER_UPDATE_SEPERATOR = "_";
 /**
  * Receives all data from the server and changed data from the client and distributes it.
  */
-class Synchronizer extends EventEmitter3 {
+class Synchronizer extends EventEmitter {
   constructor(supportedMessages) {
     super();
     this.socket = null;
-
-    /**
-     *  contains all necessary client infos
-     * @type {object} like{
-     * socket,
-        id,
-        color,
-        name
-        }
-     */
-    this.CLIENT_INFO = {};
 
     /**
      * used to detect updates which were done by the client
@@ -55,25 +33,6 @@ class Synchronizer extends EventEmitter3 {
      * @type {null}
      */
     this.socket = null;
-
-    /**
-     * contains the timestamp of the last received gameState update
-     * @type {number}
-     */
-    this.lastGameStateUpdateEventTimeStamp = 0;
-
-    /**
-     * contains the last time when the gameState updates was processed
-     * @type {number}
-     */
-    this.lastGameStateUpdateTimeStamp = 0;
-
-    /**
-     * once the client is connected,
-     * he receives the ID of the server
-     * @type {string}
-     */
-    this.connectedServerID = "";
 
     /**
      * contains all supported statUpdate
@@ -113,9 +72,7 @@ class Synchronizer extends EventEmitter3 {
       return;
     }
 
-    this.socket = require('socket.io-client').connect(Packages.NAMESPACES.MINIGOLF, {
-      query: "gameid=" + GAME_ID
-    });
+    this.socket = require('socket.io-client').connect();
 
     this._initHandlers();
   }
@@ -146,26 +103,7 @@ class Synchronizer extends EventEmitter3 {
    * @private
    */
   _initHandlers() {
-    // get clientdata of this client
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.RESPONSE_CLIENT_ACCEPTED, this._onClientAccepted.bind(this));
 
-    // receive data about the dame (after initialisation, or gamechange
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.INIT_DATA, this._onInitGame.bind(this));
-
-    // receive game updates
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.UPDATE_STATE, this._onStateUpdate.bind(this));
-
-    // another player connected
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.CLIENT_CONNECTED, this._onClientConnected.bind(this));
-
-    // an client disconnects
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.CLIENT_DISCONNECTED, this._onClientDisconnected.bind(this));
-
-    // a value of a client/player has changed
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.CLIENT_VALUE_UPDATE, this._onClientValueUpdate.bind(this));
-
-    // if value reject from serveris received
-    this.socket.on(Packages.PROTOCOL.GENERAL.TO_CLIENT.CLIENT_VALUE_UPDATE_REJECTED, this._onClientValueUpdateRejected.bind(this));
 
     this.socket.on('disconnect', this._onDisconnect.bind(this));
 
@@ -255,67 +193,10 @@ class Synchronizer extends EventEmitter3 {
     this._remmoveHandlers();
   }
 
-  _onServerError(evt) {
-    alert(evt.payload.reason);
-    if (!this._vertifyServer(evt.senderID)) {
-      console.log("message is not from server");
-      return;
-    }
-
-    /*  if(evt.data.reason == Packages.PROTOCOL.GAME_SERVER_ERRORS.NO_FREE_SLOT_AVAILABLE){
-          // TODO: redirect to lobby
-      }
-      if(evt.data.reason == Packages.PROTOCOL.GAME_SERVER_ERRORS.GAME_NOT_FOUND){
-          // TODO: redirect to lobby
-      }*/
-
-    this.emit(EVT_ON_SERVER_ERROR, evt.payload);
-
-    //TODO: redirect to lobby
-    this._remmoveHandlers();
-  }
-
-  /**
-   * handles value rejectsions from the server
-   * @param evt
-   * @private
-   */
-  _handleValueRejections(evt) {
-    for (let i = 0; i < evt.violations.length; i++) {
-      let reason = evt.violations[i];
-      this.emit(EVT_ON_CLIENT_VALUE_REJECTED, reason);
-    }
-  }
-
-  /**
-   * checks if id is the current server
-   * @param id
-   * @returns {*|boolean}
-   * @private
-   */
-  _vertifyServer(id) {
-    return id && id === this.connectedServerID;
-  }
-
   sendPackage(type, msg) {
     this.socket.emit(type, msg);
   }
 
-  /**
-   * sends a message to the server which means, that one value of this client has changed
-   * key e.g. "color"
-   * value e.g. 0xFFFFFF
-   * @param {[{key,value}]}
-   */
-  sendClientUpdate(data) {
-    this.sendPackage(Packages.PROTOCOL.GENERAL.TO_SERVER.CLIENT_VALUE_UPDATE,
-      Packages.createEvent(
-        this.CLIENT_INFO.id,
-        data,
-        this.CLIENT_INFO.token
-      )
-    );
-  }
 
   sendStateUpdate(type, data) {
     this.updateQueue.postUpdate(type,
