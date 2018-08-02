@@ -23979,6 +23979,7 @@ W = angled&lt;p&gt;
 <part name="+3V11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4k7"/>
 <part name="ONE_WIRE" library="srg" deviceset="JST-PH_3-PIN_HEADER" device=""/>
+<part name="SUPPLY_IN1" library="microbuilder" deviceset="TERMBLOCK_1X2" device="-3.5MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -23999,7 +24000,7 @@ W = angled&lt;p&gt;
 <attribute name="VALUE" x="-101.6" y="33.02" size="1.778" layer="96" rot="MR270"/>
 </instance>
 <instance part="D2" gate="G$1" x="-109.22" y="38.1" rot="R90"/>
-<instance part="SUPPLY_IN" gate="G$1" x="-88.9" y="45.72" rot="MR180"/>
+<instance part="SUPPLY_IN" gate="G$1" x="-88.9" y="50.8" rot="MR180"/>
 <instance part="GND1" gate="1" x="-73.66" y="30.48"/>
 <instance part="IC1" gate="-1" x="0" y="45.72"/>
 <instance part="P+5" gate="1" x="-7.62" y="58.42"/>
@@ -24210,6 +24211,7 @@ W = angled&lt;p&gt;
 <instance part="+3V11" gate="G$1" x="269.24" y="-167.64"/>
 <instance part="R25" gate="G$1" x="238.76" y="-170.18" rot="R90"/>
 <instance part="ONE_WIRE" gate="G$1" x="281.94" y="-177.8"/>
+<instance part="SUPPLY_IN1" gate="G$1" x="-88.9" y="40.64" rot="MR180"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">
@@ -24632,20 +24634,20 @@ W = angled&lt;p&gt;
 <segment>
 <pinref part="P+13" gate="1" pin="V+"/>
 <wire x1="-142.24" y1="55.88" x2="-142.24" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="SUPPLY_IN" gate="G$1" pin="2"/>
-<wire x1="-93.98" y1="53.34" x2="-93.98" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R35" gate="G$1" pin="2"/>
-<wire x1="-93.98" y1="53.34" x2="-99.06" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C27" gate="G$1" pin="+"/>
 <wire x1="-119.38" y1="48.26" x2="-119.38" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="-119.38" y1="53.34" x2="-99.06" y2="53.34" width="0.1524" layer="91"/>
-<junction x="-99.06" y="53.34"/>
 <pinref part="C16" gate="G$1" pin="1"/>
 <wire x1="-129.54" y1="48.26" x2="-129.54" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="-129.54" y1="53.34" x2="-119.38" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-119.38" y="53.34"/>
 <wire x1="-142.24" y1="53.34" x2="-129.54" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-129.54" y="53.34"/>
+<wire x1="-99.06" y1="53.34" x2="-93.98" y2="53.34" width="0.1524" layer="91"/>
+<junction x="-99.06" y="53.34"/>
+<pinref part="SUPPLY_IN" gate="G$1" pin="2"/>
+<wire x1="-93.98" y1="53.34" x2="-93.98" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+16" gate="1" pin="V+"/>
@@ -24691,10 +24693,10 @@ W = angled&lt;p&gt;
 </net>
 <net name="N$60" class="0">
 <segment>
-<pinref part="SUPPLY_IN" gate="G$1" pin="1"/>
-<wire x1="-93.98" y1="43.18" x2="-93.98" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="IRF7401" gate="G$1" pin="S"/>
 <wire x1="-96.52" y1="35.56" x2="-93.98" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="SUPPLY_IN1" gate="G$1" pin="1"/>
+<wire x1="-93.98" y1="35.56" x2="-93.98" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -25893,6 +25895,13 @@ W = angled&lt;p&gt;
 <wire x1="236.22" y1="-185.42" x2="276.86" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="ONE_WIRE" gate="G$1" pin="2"/>
 <wire x1="276.86" y1="-185.42" x2="276.86" y2="-177.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$50" class="0">
+<segment>
+<pinref part="SUPPLY_IN1" gate="G$1" pin="2"/>
+<pinref part="SUPPLY_IN" gate="G$1" pin="1"/>
+<wire x1="-93.98" y1="40.64" x2="-93.98" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
