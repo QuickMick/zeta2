@@ -23395,7 +23395,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="KX-9A" library="crystal-geyer_V1_0" library_urn="urn:adsk.eagle:library:203" deviceset="KX" device="-9A" package3d_urn="urn:adsk.eagle:package:11927/1" value="8Mhz"/>
 <part name="RGB_LED" library="srg" deviceset="JST-PH_4-PIN_HEADER" device=""/>
 <part name="FRONTLIGHT" library="srg" deviceset="JST-PH_2-PIN_HEADER" device=""/>
-<part name="PWR" library="term block" deviceset="691137710002" device=""/>
+<part name="J1" library="term block" deviceset="691137710002" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23575,7 +23575,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="KX-9A" gate="G$1" x="160.02" y="-10.16"/>
 <instance part="RGB_LED" gate="G$1" x="124.46" y="-121.92"/>
 <instance part="FRONTLIGHT" gate="G$1" x="170.18" y="-149.86"/>
-<instance part="PWR" gate="G$1" x="48.26" y="43.18"/>
+<instance part="J1" gate="G$1" x="48.26" y="43.18"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">
@@ -23610,7 +23610,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <wire x1="-15.24" y1="38.1" x2="-2.54" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-2.54" y="38.1"/>
 <wire x1="38.1" y1="38.1" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="2"/>
+<pinref part="J1" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="43.18" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -23979,7 +23979,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <wire x1="-22.86" y1="55.88" x2="-7.62" y2="55.88" width="0.1524" layer="91"/>
 <junction x="-7.62" y="55.88"/>
 <wire x1="40.64" y1="55.88" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="1"/>
+<pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="45.72" x2="43.18" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 <segment>

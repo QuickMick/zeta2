@@ -16493,6 +16493,18 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </library>
 <library name="microbuilder">
 <packages>
+<package name="1X2-3.5MM">
+<wire x1="-3.4" y1="3.4" x2="-3.4" y2="-2.2" width="0.127" layer="21"/>
+<wire x1="-3.4" y1="-2.2" x2="-3.4" y2="-3.6" width="0.127" layer="21"/>
+<wire x1="-3.4" y1="-3.6" x2="3.6" y2="-3.6" width="0.127" layer="21"/>
+<wire x1="3.6" y1="-3.6" x2="3.6" y2="-2.2" width="0.127" layer="21"/>
+<wire x1="3.6" y1="-2.2" x2="3.6" y2="3.4" width="0.127" layer="21"/>
+<wire x1="3.6" y1="3.4" x2="-3.4" y2="3.4" width="0.127" layer="21"/>
+<wire x1="-3.4" y1="-2.2" x2="3.6" y2="-2.2" width="0.127" layer="21"/>
+<pad name="1" x="1.8" y="0" drill="1" diameter="2.1844"/>
+<pad name="2" x="-1.7" y="0" drill="1" diameter="2.1844"/>
+<text x="-3" y="3.89" size="0.8128" layer="25">&gt;NAME</text>
+</package>
 <package name="0805">
 <description>0805 (2012 Metric)</description>
 <wire x1="-1.873" y1="0.883" x2="1.873" y2="0.883" width="0.0508" layer="39"/>
@@ -16648,6 +16660,14 @@ chip</description>
 </package>
 </packages>
 <symbols>
+<symbol name="1X2">
+<wire x1="-2.54" y1="5.08" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<pin name="1" x="-5.08" y="2.54" visible="pin" length="middle" direction="pas"/>
+<pin name="2" x="-5.08" y="0" visible="pin" length="middle" direction="pas"/>
+</symbol>
 <symbol name="RESISTOR">
 <wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
 <wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
@@ -16660,6 +16680,24 @@ chip</description>
 </symbol>
 </symbols>
 <devicesets>
+<deviceset name="TERMBLOCK_1X2" prefix="J">
+<description>3.5mm Terminal block
+&lt;p&gt;http://www.ladyada.net/library/pcb/eaglelibrary.html&lt;p&gt;</description>
+<gates>
+<gate name="G$1" symbol="1X2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-3.5MM" package="1X2-3.5MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="RESISTOR" prefix="R" uservalue="yes">
 <description>&lt;p&gt;&lt;b&gt;Resistors&lt;/b&gt;&lt;/p&gt;
 &lt;b&gt;0402&lt;/b&gt; - 0402 Surface Mount Package
@@ -23168,71 +23206,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </deviceset>
 </devicesets>
 </library>
-<library name="term block">
-<packages>
-<package name="691137710002">
-<wire x1="-5" y1="3.5" x2="5" y2="3.5" width="0.127" layer="21"/>
-<wire x1="5" y1="3.5" x2="5" y2="-4" width="0.127" layer="21"/>
-<wire x1="5" y1="-4" x2="-5" y2="-4" width="0.127" layer="21"/>
-<wire x1="-5" y1="-4" x2="-5" y2="3.5" width="0.127" layer="21"/>
-<polygon width="0.127" layer="39">
-<vertex x="-5.25" y="3.75"/>
-<vertex x="5.25" y="3.75"/>
-<vertex x="5.25" y="-4.25"/>
-<vertex x="-5.25" y="-4.25"/>
-</polygon>
-<text x="-2.4" y="4.3" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.6" y="-5.9" size="1.27" layer="27">&gt;VALUE</text>
-<text x="-4.3" y="0.7" size="1.27" layer="48">1</text>
-<pad name="1" x="-2.5" y="0" drill="1.3"/>
-<pad name="2" x="2.5" y="0" drill="1.3"/>
-</package>
-</packages>
-<symbols>
-<symbol name="2-4">
-<wire x1="-1.651" y1="3.429" x2="-1.651" y2="1.651" width="0.254" layer="94" curve="180"/>
-<text x="-1.27" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="-1.651" y1="0.889" x2="-1.651" y2="-0.889" width="0.254" layer="94" curve="180"/>
-<text x="-1.27" y="3.81" size="1.778" layer="95">&gt;NAME</text>
-<pin name="1" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="691137710002" prefix="J">
-<description>&lt;br&gt;&lt;b&gt;SERIE 1377 - 5.00 MM - HORIZONTAL CABLE ENTRY WITH  PRESSURE CLAMP - GLOW WIRE PLASTIC - WR-TBL&lt;/b&gt;
-&lt;BR&gt;
-&lt;br&gt;&lt;a href="http://katalog.we-online.de/media/images/v2/Family_WR-TBL1_6911377100xx.jpg"&gt;
-&lt;img src="http://katalog.we-online.de/media/images/v2/Family_WR-TBL1_6911377100xx.jpg" width="320"&gt;&lt;/a&gt;&lt;p&gt;
-Details see: &lt;a href="http://katalog.we-online.de/en/em/TBL_5_00_1377_HORIZONTAL_ENTRY_W_PRESSURE_CLAMP_GLOW_WIRE_6911377100xx"&gt;http://katalog.we-online.de/en/em/TBL_5_00_1377_HORIZONTAL_ENTRY_W_PRESSURE_CLAMP_GLOW_WIRE_6911377100xx&lt;/a&gt;&lt;p&gt;
-
-
-Created by Yingchun,Shan&lt;br&gt;
-2016(C) Wurth Elektronik</description>
-<gates>
-<gate name="G$1" symbol="2-4" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="691137710002">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="AVAILABILITY" value="Unavailable"/>
-<attribute name="DESCRIPTION" value=" Term Block 2pos Side Entry 5mm "/>
-<attribute name="MF" value="Wurth Electronics"/>
-<attribute name="MP" value="691137710002"/>
-<attribute name="PACKAGE" value="None"/>
-<attribute name="PRICE" value="None"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -23331,6 +23304,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4k7"/>
+<part name="LIPO_2S" library="microbuilder" deviceset="TERMBLOCK_1X2" device="-3.5MM"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10µF"/>
 <part name="L_L293DD" library="st-microelectronics" library_urn="urn:adsk.eagle:library:368" deviceset="L293DD" device="" package3d_urn="urn:adsk.eagle:package:26832/1"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -23394,8 +23368,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="+3V4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="KX-9A" library="crystal-geyer_V1_0" library_urn="urn:adsk.eagle:library:203" deviceset="KX" device="-9A" package3d_urn="urn:adsk.eagle:package:11927/1" value="8Mhz"/>
 <part name="RGB_LED" library="srg" deviceset="JST-PH_4-PIN_HEADER" device=""/>
-<part name="FRONTLIGHT" library="srg" deviceset="JST-PH_2-PIN_HEADER" device=""/>
-<part name="PWR" library="term block" deviceset="691137710002" device=""/>
+<part name="LIDAR_MOTOR1" library="srg" deviceset="JST-PH_2-PIN_HEADER" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23499,6 +23472,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="GND30" gate="1" x="218.44" y="-111.76"/>
 <instance part="+3V11" gate="G$1" x="218.44" y="-88.9"/>
 <instance part="R25" gate="G$1" x="187.96" y="-91.44" rot="R90"/>
+<instance part="LIPO_2S" gate="G$1" x="45.72" y="43.18" rot="MR180"/>
 <instance part="C1" gate="G$1" x="134.62" y="-167.64"/>
 <instance part="L_L293DD" gate="G$1" x="-20.32" y="-35.56"/>
 <instance part="GND5" gate="1" x="-7.62" y="-66.04"/>
@@ -23574,8 +23548,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="+3V4" gate="G$1" x="-5.08" y="-157.48"/>
 <instance part="KX-9A" gate="G$1" x="160.02" y="-10.16"/>
 <instance part="RGB_LED" gate="G$1" x="124.46" y="-121.92"/>
-<instance part="FRONTLIGHT" gate="G$1" x="170.18" y="-149.86"/>
-<instance part="PWR" gate="G$1" x="48.26" y="43.18"/>
+<instance part="LIDAR_MOTOR1" gate="G$1" x="170.18" y="-149.86"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">
@@ -23604,14 +23577,14 @@ Created by Yingchun,Shan&lt;br&gt;
 <junction x="5.08" y="38.1"/>
 <wire x1="15.24" y1="38.1" x2="38.1" y2="38.1" width="0.1524" layer="91"/>
 <junction x="15.24" y="38.1"/>
+<pinref part="LIPO_2S" gate="G$1" pin="1"/>
+<wire x1="38.1" y1="38.1" x2="38.1" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="40.64" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="R35" gate="G$1" pin="1"/>
 <wire x1="-22.86" y1="35.56" x2="-15.24" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="35.56" x2="-15.24" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="38.1" x2="-2.54" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-2.54" y="38.1"/>
-<wire x1="38.1" y1="38.1" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="2"/>
-<wire x1="38.1" y1="43.18" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="5V_CONV" gate="G$1" pin="IN-"/>
@@ -23953,7 +23926,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="160.02" y1="-154.94" x2="160.02" y2="-149.86" width="0.1524" layer="91"/>
-<pinref part="FRONTLIGHT" gate="G$1" pin="2"/>
+<pinref part="LIDAR_MOTOR1" gate="G$1" pin="2"/>
 <wire x1="160.02" y1="-149.86" x2="162.56" y2="-149.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -23975,12 +23948,11 @@ Created by Yingchun,Shan&lt;br&gt;
 <junction x="5.08" y="55.88"/>
 <wire x1="15.24" y1="55.88" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
 <junction x="15.24" y="55.88"/>
+<pinref part="LIPO_2S" gate="G$1" pin="2"/>
+<wire x1="40.64" y1="43.18" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="R34" gate="G$1" pin="2"/>
 <wire x1="-22.86" y1="55.88" x2="-7.62" y2="55.88" width="0.1524" layer="91"/>
 <junction x="-7.62" y="55.88"/>
-<wire x1="40.64" y1="55.88" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="1"/>
-<wire x1="40.64" y1="45.72" x2="43.18" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="INA219" gate="G$1" pin="VIN+"/>
@@ -24984,7 +24956,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="160.02" y1="-147.32" x2="162.56" y2="-147.32" width="0.1524" layer="91"/>
-<pinref part="FRONTLIGHT" gate="G$1" pin="1"/>
+<pinref part="LIDAR_MOTOR1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$20" class="0">
