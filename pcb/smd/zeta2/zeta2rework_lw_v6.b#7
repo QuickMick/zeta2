@@ -2989,7 +2989,7 @@ design rules under a new name.</description>
 <via x="34.7218" y="22.1488" extent="1-16" drill="0.35"/>
 <wire x1="30.1858" y1="32.771" x2="30.1858" y2="31.4092" width="0.3048" layer="1"/>
 <wire x1="31.024" y1="30.571" x2="31.75" y2="30.571" width="0.3048" layer="1"/>
-<wire x1="31.75" y1="30.571" x2="36.8858" y2="30.571" width="0.3048" layer="1"/>
+<wire x1="31.75" y1="30.571" x2="36.8858" y2="30.571" width="0" layer="19" extent="1-16"/>
 <wire x1="30.1858" y1="31.4092" x2="31.024" y2="30.571" width="0.3048" layer="1"/>
 <wire x1="27.9858" y1="27.571" x2="30.111" y2="27.571" width="0.3048" layer="1"/>
 <wire x1="30.111" y1="27.571" x2="31.115" y2="28.575" width="0.3048" layer="1"/>
@@ -3698,10 +3698,16 @@ design rules under a new name.</description>
 <signal name="SWDIO">
 <contactref element="STM32F103CB" pad="34"/>
 <contactref element="PI_HEADER" pad="24"/>
-<wire x1="36.8858" y1="30.071" x2="38.1132" y2="30.071" width="0.3048" layer="1"/>
-<wire x1="38.1132" y1="30.071" x2="38.4302" y2="30.388" width="0.3048" layer="1"/>
-<via x="38.4302" y="30.388" extent="1-16" drill="0.35"/>
-<wire x1="38.4302" y1="30.388" x2="38.1508" y2="48.6918" width="0" layer="19" extent="1-1"/>
+<wire x1="38.1508" y1="48.6918" x2="38.1508" y2="48.3108" width="0.3048" layer="1"/>
+<wire x1="38.1508" y1="48.3108" x2="36.83" y2="46.99" width="0.3048" layer="1"/>
+<wire x1="36.83" y1="46.99" x2="36.83" y2="45.72" width="0.3048" layer="1"/>
+<wire x1="36.83" y1="45.72" x2="33.9344" y2="42.8244" width="0.3048" layer="1"/>
+<wire x1="33.9344" y1="42.8244" x2="33.909" y2="42.8244" width="0.3048" layer="1"/>
+<wire x1="33.909" y1="42.8244" x2="33.909" y2="35.941" width="0.3048" layer="1"/>
+<wire x1="33.909" y1="35.941" x2="35.7124" y2="34.1376" width="0.3048" layer="1"/>
+<wire x1="35.9436" y1="30.071" x2="36.8858" y2="30.071" width="0.3048" layer="1"/>
+<wire x1="35.7124" y1="34.1376" x2="35.7124" y2="30.3022" width="0.3048" layer="1"/>
+<wire x1="35.7124" y1="30.3022" x2="35.9436" y2="30.071" width="0.3048" layer="1"/>
 </signal>
 <signal name="BOOT1">
 <contactref element="STM32F103CB" pad="20"/>

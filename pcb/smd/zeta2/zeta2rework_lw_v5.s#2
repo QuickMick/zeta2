@@ -23989,26 +23989,6 @@ W = angled&lt;p&gt;
 <label x="-83.82" y="-104.14" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$25" class="0">
-<segment>
-<pinref part="IC3" gate="G$1" pin="OUT2"/>
-<wire x1="-5.08" y1="-106.68" x2="10.16" y2="-106.68" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="-106.68" x2="10.16" y2="-104.14" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="-104.14" x2="17.78" y2="-101.6" width="0.1524" layer="91"/>
-<pinref part="ML1" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$26" class="0">
-<segment>
-<wire x1="0" y1="-99.06" x2="0" y2="-101.6" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="OUT1"/>
-<wire x1="-5.08" y1="-101.6" x2="0" y2="-101.6" width="0.1524" layer="91"/>
-<wire x1="0" y1="-99.06" x2="12.7" y2="-99.06" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-99.06" x2="12.7" y2="-106.68" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-106.68" x2="17.78" y2="-104.14" width="0.1524" layer="91"/>
-<pinref part="ML1" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="PWM_M_EN_2" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
@@ -24020,24 +24000,6 @@ W = angled&lt;p&gt;
 <wire x1="215.9" y1="-48.26" x2="215.9" y2="-63.5" width="0.1524" layer="91"/>
 <wire x1="215.9" y1="-63.5" x2="180.34" y2="-63.5" width="0.1524" layer="91"/>
 <label x="162.56" y="-63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<wire x1="0" y1="-119.38" x2="0" y2="-116.84" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="OUT4"/>
-<wire x1="-5.08" y1="-116.84" x2="0" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-119.38" x2="12.7" y2="-109.22" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-109.22" x2="17.78" y2="-114.3" width="0.1524" layer="91"/>
-<wire x1="0" y1="-119.38" x2="12.7" y2="-119.38" width="0.1524" layer="91"/>
-<pinref part="ML2" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="IC3" gate="G$1" pin="OUT3"/>
-<wire x1="-5.08" y1="-111.76" x2="17.78" y2="-116.84" width="0.1524" layer="91"/>
-<pinref part="ML2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -24628,6 +24590,36 @@ W = angled&lt;p&gt;
 <pinref part="LDIAR" gate="G$1" pin="1"/>
 <wire x1="325.12" y1="-30.48" x2="322.58" y2="-30.48" width="0.1524" layer="91"/>
 <label x="302.26" y="-30.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="IC3" gate="G$1" pin="OUT4"/>
+<pinref part="ML2" gate="G$1" pin="2"/>
+<wire x1="-5.08" y1="-116.84" x2="17.78" y2="-116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="ML2" gate="G$1" pin="1"/>
+<pinref part="IC3" gate="G$1" pin="OUT3"/>
+<wire x1="17.78" y1="-114.3" x2="17.78" y2="-111.76" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-111.76" x2="-5.08" y2="-111.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$25" class="0">
+<segment>
+<pinref part="IC3" gate="G$1" pin="OUT2"/>
+<pinref part="ML1" gate="G$1" pin="2"/>
+<wire x1="-5.08" y1="-106.68" x2="-5.08" y2="-104.14" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="-104.14" x2="17.78" y2="-104.14" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$26" class="0">
+<segment>
+<pinref part="ML1" gate="G$1" pin="1"/>
+<pinref part="IC3" gate="G$1" pin="OUT1"/>
+<wire x1="17.78" y1="-101.6" x2="-5.08" y2="-101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

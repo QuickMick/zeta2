@@ -22711,6 +22711,141 @@ W = angled&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="adafruit">
+<packages>
+<package name="HTSSOP20DAP">
+<wire x1="-3.25" y1="2.2" x2="3.25" y2="2.2" width="0.1016" layer="21"/>
+<wire x1="3.25" y1="2.2" x2="3.25" y2="-2.2" width="0.1016" layer="21"/>
+<wire x1="3.25" y1="-2.2" x2="-3.25" y2="-2.2" width="0.1016" layer="21"/>
+<wire x1="-3.25" y1="-2.2" x2="-3.25" y2="2.2" width="0.1016" layer="21"/>
+<circle x="-3.75" y="-1.85" radius="0.325" width="0.1016" layer="21"/>
+<smd name="1" x="-2.925" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="2" x="-2.275" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="3" x="-1.625" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="4" x="-0.975" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="5" x="-0.325" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="6" x="0.325" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="7" x="0.975" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="8" x="1.625" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="9" x="2.275" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="10" x="2.925" y="-2.8" dx="0.3" dy="1.55" layer="1"/>
+<smd name="11" x="2.925" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="12" x="2.275" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="13" x="1.625" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="14" x="0.975" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="15" x="0.325" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="16" x="-0.325" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="EXP" x="0" y="0" dx="6.5" dy="3.4" layer="1" stop="no" cream="no"/>
+<smd name="17" x="-0.975" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="18" x="-1.625" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="19" x="-2.275" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<smd name="20" x="-2.925" y="2.8" dx="0.3" dy="1.55" layer="1" rot="R180"/>
+<rectangle x1="-3.075" y1="-3" x2="-2.775" y2="-2.25" layer="51"/>
+<rectangle x1="-2.425" y1="-3" x2="-2.125" y2="-2.25" layer="51"/>
+<rectangle x1="-1.775" y1="-3" x2="-1.475" y2="-2.25" layer="51"/>
+<rectangle x1="-1.125" y1="-3" x2="-0.825" y2="-2.25" layer="51"/>
+<rectangle x1="-0.475" y1="-3" x2="-0.175" y2="-2.25" layer="51"/>
+<rectangle x1="0.175" y1="-3" x2="0.475" y2="-2.25" layer="51"/>
+<rectangle x1="0.825" y1="-3" x2="1.125" y2="-2.25" layer="51"/>
+<rectangle x1="1.475" y1="-3" x2="1.775" y2="-2.25" layer="51"/>
+<rectangle x1="2.125" y1="-3" x2="2.425" y2="-2.25" layer="51"/>
+<rectangle x1="2.775" y1="2.25" x2="3.075" y2="3" layer="51" rot="R180"/>
+<rectangle x1="2.125" y1="2.25" x2="2.425" y2="3" layer="51" rot="R180"/>
+<rectangle x1="1.475" y1="2.25" x2="1.775" y2="3" layer="51" rot="R180"/>
+<rectangle x1="0.825" y1="2.25" x2="1.125" y2="3" layer="51" rot="R180"/>
+<rectangle x1="0.175" y1="2.25" x2="0.475" y2="3" layer="51" rot="R180"/>
+<rectangle x1="-0.475" y1="2.25" x2="-0.175" y2="3" layer="51" rot="R180"/>
+<rectangle x1="-1.125" y1="2.25" x2="-0.825" y2="3" layer="51" rot="R180"/>
+<rectangle x1="-1.775" y1="2.25" x2="-1.475" y2="3" layer="51" rot="R180"/>
+<rectangle x1="-2.425" y1="2.25" x2="-2.125" y2="3" layer="51" rot="R180"/>
+<rectangle x1="-3.075" y1="2.25" x2="-2.775" y2="3" layer="51" rot="R180"/>
+<polygon width="0.127" layer="29">
+<vertex x="-1.715" y="1.375"/>
+<vertex x="1.715" y="1.375"/>
+<vertex x="1.715" y="-1.375"/>
+<vertex x="-1.715" y="-1.375"/>
+</polygon>
+<rectangle x1="2.775" y1="-3" x2="3.075" y2="-2.25" layer="51"/>
+<polygon width="0.127" layer="31">
+<vertex x="-1.67" y="1.37"/>
+<vertex x="1.67" y="1.37"/>
+<vertex x="1.67" y="-1.37"/>
+<vertex x="-1.67" y="-1.37"/>
+</polygon>
+</package>
+</packages>
+<symbols>
+<symbol name="TLC59711">
+<wire x1="-10.16" y1="17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="10.16" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-17.78" x2="-10.16" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-17.78" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<text x="-5.08" y="-20.32" size="1.778" layer="95">&gt;NAME</text>
+<text x="5.08" y="20.32" size="1.778" layer="96" rot="R180">TLC59711</text>
+<pin name="OUTR0" x="-15.24" y="0" length="middle" direction="oc"/>
+<pin name="OUTG0" x="-15.24" y="-2.54" length="middle" direction="oc"/>
+<pin name="OUTB0" x="-15.24" y="-5.08" length="middle" direction="oc"/>
+<pin name="OUTR1" x="-15.24" y="-10.16" length="middle" direction="oc"/>
+<pin name="OUTG1" x="-15.24" y="-12.7" length="middle" direction="oc"/>
+<pin name="OUTB1" x="-15.24" y="-15.24" length="middle" direction="oc"/>
+<pin name="OUTR2" x="15.24" y="-15.24" length="middle" direction="oc" rot="R180"/>
+<pin name="OUTG2" x="15.24" y="-12.7" length="middle" direction="oc" rot="R180"/>
+<pin name="OUTB2" x="15.24" y="-10.16" length="middle" direction="oc" rot="R180"/>
+<pin name="OUTR3" x="15.24" y="-5.08" length="middle" direction="oc" rot="R180"/>
+<pin name="OUTG3" x="15.24" y="-2.54" length="middle" direction="oc" rot="R180"/>
+<pin name="OUTB3" x="15.24" y="0" length="middle" direction="oc" rot="R180"/>
+<pin name="GND" x="-15.24" y="15.24" length="middle" direction="pwr"/>
+<pin name="IREF" x="-15.24" y="10.16" length="middle"/>
+<pin name="SCKI" x="-15.24" y="7.62" length="middle" direction="in"/>
+<pin name="SDTI" x="-15.24" y="5.08" length="middle" direction="in"/>
+<pin name="SDTO" x="15.24" y="5.08" length="middle" direction="out" rot="R180"/>
+<pin name="VCC" x="15.24" y="15.24" length="middle" direction="pwr" rot="R180"/>
+<pin name="SCKO" x="15.24" y="7.62" length="middle" direction="out" rot="R180"/>
+<pin name="VREG" x="15.24" y="10.16" length="middle" rot="R180"/>
+</symbol>
+<symbol name="THERMAL_PAD">
+<pin name="PAD" x="-5.08" y="0" length="middle" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TLC59711" prefix="IC">
+<gates>
+<gate name="G$1" symbol="TLC59711" x="0" y="0"/>
+<gate name="G$2" symbol="THERMAL_PAD" x="2.54" y="25.4"/>
+</gates>
+<devices>
+<device name="" package="HTSSOP20DAP">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IREF" pad="1"/>
+<connect gate="G$1" pin="OUTB0" pad="5"/>
+<connect gate="G$1" pin="OUTB1" pad="8"/>
+<connect gate="G$1" pin="OUTB2" pad="15"/>
+<connect gate="G$1" pin="OUTB3" pad="18"/>
+<connect gate="G$1" pin="OUTG0" pad="4"/>
+<connect gate="G$1" pin="OUTG1" pad="7"/>
+<connect gate="G$1" pin="OUTG2" pad="14"/>
+<connect gate="G$1" pin="OUTG3" pad="17"/>
+<connect gate="G$1" pin="OUTR0" pad="3"/>
+<connect gate="G$1" pin="OUTR1" pad="6"/>
+<connect gate="G$1" pin="OUTR2" pad="13"/>
+<connect gate="G$1" pin="OUTR3" pad="16"/>
+<connect gate="G$1" pin="SCKI" pad="10"/>
+<connect gate="G$1" pin="SCKO" pad="11"/>
+<connect gate="G$1" pin="SDTI" pad="9"/>
+<connect gate="G$1" pin="SDTO" pad="12"/>
+<connect gate="G$1" pin="VCC" pad="19"/>
+<connect gate="G$1" pin="VREG" pad="20"/>
+<connect gate="G$2" pin="PAD" pad="EXP"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -22884,6 +23019,7 @@ W = angled&lt;p&gt;
 <part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="10k"/>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
+<part name="IC4" library="adafruit" deviceset="TLC59711" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23089,6 +23225,7 @@ W = angled&lt;p&gt;
 <instance part="R29" gate="G$1" x="78.74" y="-5.08" rot="R90"/>
 <instance part="+3V1" gate="G$1" x="86.36" y="-10.16"/>
 <instance part="C11" gate="G$1" x="91.44" y="7.62"/>
+<instance part="IC4" gate="G$1" x="-81.28" y="33.02"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">

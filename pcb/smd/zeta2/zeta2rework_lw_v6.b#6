@@ -3685,7 +3685,7 @@ design rules under a new name.</description>
 <wire x1="27.9858" y1="25.571" x2="26.968" y2="25.571" width="0.3048" layer="1"/>
 <wire x1="26.968" y1="25.571" x2="26.5684" y2="25.1714" width="0.3048" layer="1"/>
 <via x="26.5684" y="25.1714" extent="1-16" drill="0.35"/>
-<wire x1="27.9858" y1="25.571" x2="27.9908" y2="48.6918" width="0" layer="19" extent="1-1"/>
+<wire x1="27.9908" y1="48.6918" x2="27.9858" y2="25.571" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USART2_RX">
 <contactref element="STM32F103CB" pad="13"/>
@@ -3693,7 +3693,7 @@ design rules under a new name.</description>
 <wire x1="29.6858" y1="23.871" x2="29.6858" y2="23.031" width="0.3048" layer="1"/>
 <wire x1="29.6858" y1="23.031" x2="29.21" y2="22.5552" width="0.3048" layer="1"/>
 <via x="29.21" y="22.5552" extent="1-16" drill="0.35"/>
-<wire x1="29.6858" y1="23.871" x2="25.4508" y2="48.6918" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4508" y1="48.6918" x2="29.6858" y2="23.871" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="STM32F103CB" pad="34"/>
@@ -3724,7 +3724,7 @@ design rules under a new name.</description>
 <wire x1="27.9858" y1="28.071" x2="25.9882" y2="28.071" width="0.3048" layer="1"/>
 <wire x1="25.9882" y1="28.071" x2="25.6032" y2="27.686" width="0.3048" layer="1"/>
 <via x="25.6032" y="27.686" extent="1-16" drill="0.35"/>
-<wire x1="27.9858" y1="28.071" x2="35.6108" y2="48.6918" width="0" layer="19" extent="1-1"/>
+<wire x1="35.6108" y1="48.6918" x2="27.9858" y2="28.071" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWDCLK">
 <contactref element="STM32F103CB" pad="37"/>

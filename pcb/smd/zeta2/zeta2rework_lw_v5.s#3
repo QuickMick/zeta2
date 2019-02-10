@@ -22814,8 +22814,6 @@ W = angled&lt;p&gt;
 <part name="GND24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
-<part name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100k"/>
-<part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100k"/>
 <part name="+3V16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SJ3" library="microbuilder" deviceset="SOLDERJUMPER" device="REFLOW_NOPASTE"/>
@@ -23006,8 +23004,6 @@ W = angled&lt;p&gt;
 <instance part="GND24" gate="1" x="256.54" y="5.08"/>
 <instance part="+3V15" gate="G$1" x="256.54" y="20.32"/>
 <instance part="C40" gate="G$1" x="256.54" y="12.7"/>
-<instance part="R31" gate="G$1" x="205.74" y="35.56"/>
-<instance part="R33" gate="G$1" x="228.6" y="-66.04"/>
 <instance part="+3V16" gate="G$1" x="299.72" y="-50.8"/>
 <instance part="GND19" gate="1" x="274.32" y="-83.82"/>
 <instance part="SJ3" gate="1" x="238.76" y="-99.06"/>
@@ -23322,15 +23318,11 @@ W = angled&lt;p&gt;
 </segment>
 <segment>
 <pinref part="C39" gate="G$1" pin="2"/>
-<wire x1="238.76" y1="-60.96" x2="238.76" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="STM32F103CB" gate="G$1" pin="VSS1"/>
-<wire x1="238.76" y1="-66.04" x2="238.76" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="-60.96" x2="238.76" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="-48.26" x2="228.6" y2="-60.96" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="-60.96" x2="238.76" y2="-60.96" width="0.1524" layer="91"/>
 <junction x="238.76" y="-60.96"/>
-<pinref part="R33" gate="G$1" pin="2"/>
-<wire x1="233.68" y1="-66.04" x2="238.76" y2="-66.04" width="0.1524" layer="91"/>
-<junction x="238.76" y="-66.04"/>
 </segment>
 <segment>
 <pinref part="C40" gate="G$1" pin="2"/>
@@ -23598,9 +23590,6 @@ W = angled&lt;p&gt;
 <wire x1="203.2" y1="10.16" x2="187.96" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="10.16" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
 <junction x="187.96" y="35.56"/>
-<pinref part="R31" gate="G$1" pin="1"/>
-<wire x1="200.66" y1="35.56" x2="193.04" y2="35.56" width="0.1524" layer="91"/>
-<junction x="193.04" y="35.56"/>
 <pinref part="STM32F103CB" gate="G$1" pin="VBAT"/>
 <wire x1="187.96" y1="-5.08" x2="187.96" y2="10.16" width="0.1524" layer="91"/>
 <junction x="187.96" y="10.16"/>
@@ -24194,9 +24183,6 @@ W = angled&lt;p&gt;
 <wire x1="213.36" y1="10.16" x2="213.36" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="35.56" x2="220.98" y2="35.56" width="0.1524" layer="91"/>
 <label x="220.98" y="35.56" size="1.778" layer="95"/>
-<pinref part="R31" gate="G$1" pin="2"/>
-<wire x1="210.82" y1="35.56" x2="213.36" y2="35.56" width="0.1524" layer="91"/>
-<junction x="213.36" y="35.56"/>
 </segment>
 <segment>
 <wire x1="269.24" y1="-66.04" x2="266.7" y2="-66.04" width="0.1524" layer="91"/>
@@ -24324,13 +24310,9 @@ W = angled&lt;p&gt;
 <net name="BOOT1" class="0">
 <segment>
 <pinref part="STM32F103CB" gate="G$1" pin="PB2"/>
-<wire x1="220.98" y1="-48.26" x2="220.98" y2="-66.04" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="-66.04" x2="220.98" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="-48.26" x2="220.98" y2="-68.58" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="-68.58" x2="180.34" y2="-68.58" width="0.1524" layer="91"/>
 <label x="170.18" y="-68.58" size="1.778" layer="95"/>
-<pinref part="R33" gate="G$1" pin="1"/>
-<wire x1="223.52" y1="-66.04" x2="220.98" y2="-66.04" width="0.1524" layer="91"/>
-<junction x="220.98" y="-66.04"/>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>

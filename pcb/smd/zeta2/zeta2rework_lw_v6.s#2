@@ -24162,9 +24162,9 @@ W = angled&lt;p&gt;
 <label x="274.32" y="-17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LDIAR" gate="G$1" pin="2"/>
-<wire x1="325.12" y1="-33.02" x2="322.58" y2="-33.02" width="0.1524" layer="91"/>
-<label x="312.42" y="-33.02" size="1.778" layer="95"/>
+<pinref part="LDIAR" gate="G$1" pin="1"/>
+<wire x1="325.12" y1="-30.48" x2="322.58" y2="-30.48" width="0.1524" layer="91"/>
+<label x="314.96" y="-30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="U1_TX" class="0">
@@ -24174,9 +24174,9 @@ W = angled&lt;p&gt;
 <label x="274.32" y="-20.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LDIAR" gate="G$1" pin="3"/>
-<wire x1="325.12" y1="-35.56" x2="322.58" y2="-35.56" width="0.1524" layer="91"/>
-<label x="312.42" y="-35.56" size="1.778" layer="95"/>
+<pinref part="LDIAR" gate="G$1" pin="2"/>
+<wire x1="325.12" y1="-33.02" x2="322.58" y2="-33.02" width="0.1524" layer="91"/>
+<label x="312.42" y="-33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="USB_DM" class="0">
@@ -24587,9 +24587,9 @@ W = angled&lt;p&gt;
 <label x="251.46" y="-33.02" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LDIAR" gate="G$1" pin="1"/>
-<wire x1="325.12" y1="-30.48" x2="322.58" y2="-30.48" width="0.1524" layer="91"/>
-<label x="302.26" y="-30.48" size="1.778" layer="95"/>
+<pinref part="LDIAR" gate="G$1" pin="3"/>
+<wire x1="325.12" y1="-35.56" x2="322.58" y2="-35.56" width="0.1524" layer="91"/>
+<label x="304.8" y="-35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">

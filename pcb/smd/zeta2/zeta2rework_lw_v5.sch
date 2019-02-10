@@ -22884,6 +22884,7 @@ W = angled&lt;p&gt;
 <part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="10k"/>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
+<part name="U$2" library="rpi-zero" deviceset="RPI-ZERO" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23089,6 +23090,7 @@ W = angled&lt;p&gt;
 <instance part="R29" gate="G$1" x="78.74" y="-5.08" rot="R90"/>
 <instance part="+3V1" gate="G$1" x="86.36" y="-10.16"/>
 <instance part="C11" gate="G$1" x="292.1" y="-40.64"/>
+<instance part="U$2" gate="G$1" x="-182.88" y="-66.04"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">
