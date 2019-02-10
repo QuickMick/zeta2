@@ -23342,7 +23342,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <part name="R27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="220R"/>
 <part name="R28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="220R"/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="MP6060" library="MPU-6050" deviceset="MPU-6050" device=""/>
+<part name="MPU6050" library="MPU-6050" deviceset="MPU-6050" device=""/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="2,2nF"/>
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
@@ -23384,7 +23384,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4k7"/>
-<part name="LIPO3S" library="microbuilder" deviceset="TERMBLOCK_1X2" device="-3.5MM"/>
+<part name="LIPO_2S" library="microbuilder" deviceset="TERMBLOCK_1X2" device="-3.5MM"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10µF"/>
 <part name="L_L293DD" library="st-microelectronics" library_urn="urn:adsk.eagle:library:368" deviceset="L293DD" device="" package3d_urn="urn:adsk.eagle:package:26832/1"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -23510,7 +23510,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <instance part="R27" gate="G$1" x="104.14" y="-121.92"/>
 <instance part="R28" gate="G$1" x="104.14" y="-116.84"/>
 <instance part="P+1" gate="1" x="111.76" y="-104.14"/>
-<instance part="MP6060" gate="G$1" x="83.82" y="-182.88"/>
+<instance part="MPU6050" gate="G$1" x="83.82" y="-182.88"/>
 <instance part="GND12" gate="1" x="104.14" y="-210.82"/>
 <instance part="C17" gate="G$1" x="111.76" y="-195.58"/>
 <instance part="+3V7" gate="G$1" x="111.76" y="-152.4"/>
@@ -23552,7 +23552,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <instance part="GND30" gate="1" x="218.44" y="-111.76"/>
 <instance part="+3V11" gate="G$1" x="218.44" y="-88.9"/>
 <instance part="R25" gate="G$1" x="187.96" y="-91.44" rot="R90"/>
-<instance part="LIPO3S" gate="G$1" x="45.72" y="43.18" rot="MR180"/>
+<instance part="LIPO_2S" gate="G$1" x="45.72" y="43.18" rot="MR180"/>
 <instance part="C1" gate="G$1" x="134.62" y="-167.64"/>
 <instance part="L_L293DD" gate="G$1" x="-20.32" y="-35.56"/>
 <instance part="GND5" gate="1" x="-7.62" y="-66.04"/>
@@ -23657,7 +23657,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <junction x="5.08" y="38.1"/>
 <wire x1="15.24" y1="38.1" x2="38.1" y2="38.1" width="0.1524" layer="91"/>
 <junction x="15.24" y="38.1"/>
-<pinref part="LIPO3S" gate="G$1" pin="1"/>
+<pinref part="LIPO_2S" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="38.1" x2="38.1" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="40.64" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="R35" gate="G$1" pin="1"/>
@@ -23767,7 +23767,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 </segment>
 <segment>
 <pinref part="C17" gate="G$1" pin="2"/>
-<pinref part="MP6060" gate="G$1" pin="GND"/>
+<pinref part="MPU6050" gate="G$1" pin="GND"/>
 <wire x1="111.76" y1="-200.66" x2="111.76" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="-203.2" x2="104.14" y2="-203.2" width="0.1524" layer="91"/>
 <pinref part="GND12" gate="1" pin="GND"/>
@@ -23793,15 +23793,15 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <junction x="121.92" y="-172.72"/>
 </segment>
 <segment>
-<pinref part="MP6060" gate="G$1" pin="FSYNC"/>
+<pinref part="MPU6050" gate="G$1" pin="FSYNC"/>
 <wire x1="68.58" y1="-182.88" x2="63.5" y2="-182.88" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="63.5" y1="-182.88" x2="63.5" y2="-208.28" width="0.1524" layer="91"/>
-<pinref part="MP6060" gate="G$1" pin="CLKIN"/>
+<pinref part="MPU6050" gate="G$1" pin="CLKIN"/>
 <wire x1="68.58" y1="-170.18" x2="63.5" y2="-170.18" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="-170.18" x2="63.5" y2="-175.26" width="0.1524" layer="91"/>
 <junction x="63.5" y="-182.88"/>
-<pinref part="MP6060" gate="G$1" pin="AD0"/>
+<pinref part="MPU6050" gate="G$1" pin="AD0"/>
 <wire x1="63.5" y1="-175.26" x2="63.5" y2="-182.88" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="-175.26" x2="63.5" y2="-175.26" width="0.1524" layer="91"/>
 <junction x="63.5" y="-175.26"/>
@@ -24028,7 +24028,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <junction x="5.08" y="55.88"/>
 <wire x1="15.24" y1="55.88" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
 <junction x="15.24" y="55.88"/>
-<pinref part="LIPO3S" gate="G$1" pin="2"/>
+<pinref part="LIPO_2S" gate="G$1" pin="2"/>
 <wire x1="40.64" y1="43.18" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="R34" gate="G$1" pin="2"/>
 <wire x1="-22.86" y1="55.88" x2="-7.62" y2="55.88" width="0.1524" layer="91"/>
@@ -24082,10 +24082,10 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <wire x1="121.92" y1="-162.56" x2="111.76" y2="-162.56" width="0.1524" layer="91"/>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
 <wire x1="111.76" y1="-154.94" x2="111.76" y2="-162.56" width="0.1524" layer="91"/>
-<pinref part="MP6060" gate="G$1" pin="VDD"/>
+<pinref part="MPU6050" gate="G$1" pin="VDD"/>
 <wire x1="111.76" y1="-162.56" x2="109.22" y2="-162.56" width="0.1524" layer="91"/>
 <junction x="111.76" y="-162.56"/>
-<pinref part="MP6060" gate="G$1" pin="VLOGIC"/>
+<pinref part="MPU6050" gate="G$1" pin="VLOGIC"/>
 <pinref part="C20" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="-162.56" x2="99.06" y2="-162.56" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="-165.1" x2="109.22" y2="-165.1" width="0.1524" layer="91"/>
@@ -24276,7 +24276,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <wire x1="81.28" y1="-58.42" x2="50.8" y2="-58.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="MP6060" gate="G$1" pin="SCL"/>
+<pinref part="MPU6050" gate="G$1" pin="SCL"/>
 <wire x1="68.58" y1="-187.96" x2="50.8" y2="-187.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -24308,7 +24308,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <wire x1="81.28" y1="-60.96" x2="50.8" y2="-60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="MP6060" gate="G$1" pin="SDA"/>
+<pinref part="MPU6050" gate="G$1" pin="SDA"/>
 <wire x1="68.58" y1="-190.5" x2="50.8" y2="-190.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -24536,7 +24536,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 </net>
 <net name="N$34" class="0">
 <segment>
-<pinref part="MP6060" gate="G$1" pin="CPOUT"/>
+<pinref part="MPU6050" gate="G$1" pin="CPOUT"/>
 <wire x1="99.06" y1="-187.96" x2="111.76" y2="-187.96" width="0.1524" layer="91"/>
 <pinref part="C17" gate="G$1" pin="1"/>
 <wire x1="111.76" y1="-187.96" x2="111.76" y2="-193.04" width="0.1524" layer="91"/>
@@ -24546,13 +24546,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B2B-ZR(LF)(SN
 <segment>
 <pinref part="C21" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="-193.04" x2="101.6" y2="-190.5" width="0.1524" layer="91"/>
-<pinref part="MP6060" gate="G$1" pin="REGOUT"/>
+<pinref part="MPU6050" gate="G$1" pin="REGOUT"/>
 <wire x1="101.6" y1="-190.5" x2="99.06" y2="-190.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="MPU_INT" class="0">
 <segment>
-<pinref part="MP6060" gate="G$1" pin="INT"/>
+<pinref part="MPU6050" gate="G$1" pin="INT"/>
 <wire x1="99.06" y1="-175.26" x2="104.14" y2="-175.26" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-175.26" x2="104.14" y2="-180.34" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-180.34" x2="109.22" y2="-180.34" width="0.1524" layer="91"/>
