@@ -23318,7 +23318,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <parts>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
-<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="UD-4X5,8" package3d_urn="urn:adsk.eagle:package:23474/1" value="47µF"/>
+<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="UD-4X5,8" package3d_urn="urn:adsk.eagle:package:23474/1" value="100µF"/>
 <part name="5V_CONV" library="diy-modules" deviceset="DC-DC-STEP-DOWN-MP2307" device=""/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
@@ -23351,7 +23351,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
+<part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nf"/>
 <part name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1µF"/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+8V" device=""/>
 <part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="22R"/>
@@ -23387,7 +23387,6 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4k7"/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
 <part name="L_L293DD" library="st-microelectronics" library_urn="urn:adsk.eagle:library:368" deviceset="L293DD" device="" package3d_urn="urn:adsk.eagle:package:26832/1"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -23452,6 +23451,8 @@ Created by Yingchun,Shan&lt;br&gt;
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -23483,17 +23484,17 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="C12" gate="G$1" x="-20.32" y="-78.74"/>
 <instance part="GND11" gate="1" x="-20.32" y="-86.36"/>
 <instance part="C2" gate="G$1" x="-10.16" y="-78.74"/>
-<instance part="R26" gate="G$1" x="104.14" y="-127"/>
+<instance part="R26" gate="G$1" x="104.14" y="-129.54"/>
 <instance part="R27" gate="G$1" x="104.14" y="-121.92"/>
-<instance part="R28" gate="G$1" x="104.14" y="-116.84"/>
-<instance part="P+1" gate="1" x="111.76" y="-104.14"/>
+<instance part="R28" gate="G$1" x="104.14" y="-114.3"/>
+<instance part="P+1" gate="1" x="116.84" y="-109.22"/>
 <instance part="MPU6050" gate="G$1" x="83.82" y="-182.88"/>
 <instance part="GND12" gate="1" x="104.14" y="-210.82"/>
 <instance part="C17" gate="G$1" x="111.76" y="-195.58"/>
-<instance part="+3V7" gate="G$1" x="111.76" y="-152.4"/>
-<instance part="C18" gate="G$1" x="121.92" y="-165.1"/>
+<instance part="+3V7" gate="G$1" x="104.14" y="-152.4"/>
+<instance part="C18" gate="G$1" x="111.76" y="-162.56" rot="R90"/>
 <instance part="GND13" gate="1" x="63.5" y="-210.82"/>
-<instance part="C20" gate="G$1" x="109.22" y="-167.64"/>
+<instance part="C20" gate="G$1" x="111.76" y="-170.18" rot="R90"/>
 <instance part="C21" gate="G$1" x="101.6" y="-195.58"/>
 <instance part="SUPPLY4" gate="+8V" x="142.24" y="-66.04"/>
 <instance part="R22" gate="G$1" x="124.46" y="-99.06"/>
@@ -23529,7 +23530,6 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="GND30" gate="1" x="218.44" y="-111.76"/>
 <instance part="+3V11" gate="G$1" x="218.44" y="-88.9"/>
 <instance part="R25" gate="G$1" x="187.96" y="-91.44" rot="R90"/>
-<instance part="C1" gate="G$1" x="134.62" y="-167.64"/>
 <instance part="L_L293DD" gate="G$1" x="-20.32" y="-35.56"/>
 <instance part="GND5" gate="1" x="-7.62" y="-66.04"/>
 <instance part="P+2" gate="1" x="2.54" y="7.62"/>
@@ -23543,8 +23543,8 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="SUPPLY6" gate="+8V" x="76.2" y="58.42"/>
 <instance part="R34" gate="G$1" x="-22.86" y="50.8" rot="R90"/>
 <instance part="R35" gate="G$1" x="-22.86" y="40.64" rot="R90"/>
-<instance part="MOTOR_L_B" gate="G$1" x="10.16" y="-27.94"/>
-<instance part="MOTOR_L_F" gate="G$1" x="10.16" y="-40.64"/>
+<instance part="MOTOR_L_B" gate="G$1" x="7.62" y="-27.94"/>
+<instance part="MOTOR_L_F" gate="G$1" x="7.62" y="-40.64"/>
 <instance part="MOTOR_R_B" gate="G$1" x="10.16" y="-104.14"/>
 <instance part="MOTOR_R_F" gate="G$1" x="10.16" y="-116.84"/>
 <instance part="BOOTCONFIG" gate="G$1" x="127" y="-12.7" rot="R180"/>
@@ -23583,7 +23583,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="3.3V" gate="G$1" x="-5.08" y="-172.72"/>
 <instance part="+3V4" gate="G$1" x="-5.08" y="-157.48"/>
 <instance part="KX-9A" gate="G$1" x="160.02" y="-10.16"/>
-<instance part="RGB_LED" gate="G$1" x="124.46" y="-121.92"/>
+<instance part="RGB_LED" gate="G$1" x="127" y="-121.92"/>
 <instance part="FRONTLIGHT" gate="G$1" x="170.18" y="-149.86"/>
 <instance part="PWR" gate="G$1" x="22.86" y="43.18"/>
 <instance part="P+12" gate="1" x="-7.62" y="-187.96"/>
@@ -23597,6 +23597,8 @@ Created by Yingchun,Shan&lt;br&gt;
 <instance part="GND10" gate="1" x="91.44" y="35.56"/>
 <instance part="C4" gate="G$1" x="-5.08" y="-2.54"/>
 <instance part="C5" gate="G$1" x="-2.54" y="-78.74"/>
+<instance part="GND4" gate="1" x="119.38" y="-172.72"/>
+<instance part="R1" gate="G$1" x="210.82" y="17.78" rot="R90"/>
 </instances>
 <busses>
 <bus name="SCL,SDA">
@@ -23720,22 +23722,11 @@ Created by Yingchun,Shan&lt;br&gt;
 <wire x1="101.6" y1="-203.2" x2="99.06" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-208.28" x2="104.14" y2="-203.2" width="0.1524" layer="91"/>
 <junction x="104.14" y="-203.2"/>
-<pinref part="C18" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="-170.18" x2="121.92" y2="-172.72" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="-172.72" x2="121.92" y2="-175.26" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="-175.26" x2="121.92" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="-203.2" x2="111.76" y2="-203.2" width="0.1524" layer="91"/>
 <junction x="111.76" y="-203.2"/>
-<pinref part="C20" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="-172.72" x2="109.22" y2="-175.26" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-175.26" x2="121.92" y2="-175.26" width="0.1524" layer="91"/>
-<junction x="121.92" y="-175.26"/>
 <pinref part="C21" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="-200.66" x2="101.6" y2="-203.2" width="0.1524" layer="91"/>
 <junction x="101.6" y="-203.2"/>
-<pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="-172.72" x2="121.92" y2="-172.72" width="0.1524" layer="91"/>
-<junction x="121.92" y="-172.72"/>
 </segment>
 <segment>
 <pinref part="MPU6050" gate="G$1" pin="FSYNC"/>
@@ -23770,6 +23761,9 @@ Created by Yingchun,Shan&lt;br&gt;
 <pinref part="STM32F103CB" gate="G$1" pin="VSS3"/>
 <wire x1="205.74" y1="10.16" x2="205.74" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="22.86" x2="193.04" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="210.82" y1="22.86" x2="205.74" y2="22.86" width="0.1524" layer="91"/>
+<junction x="205.74" y="22.86"/>
 </segment>
 <segment>
 <pinref part="C36" gate="G$1" pin="1"/>
@@ -23958,13 +23952,10 @@ Created by Yingchun,Shan&lt;br&gt;
 <pinref part="GND" gate="G$1" pin="TP"/>
 <wire x1="5.08" y1="-162.56" x2="2.54" y2="-170.18" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-170.18" x2="5.08" y2="-170.18" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="-170.18" x2="5.08" y2="-182.88" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="-170.18" x2="5.08" y2="-185.42" width="0.1524" layer="91"/>
 <junction x="2.54" y="-170.18"/>
-<wire x1="5.08" y1="-182.88" x2="7.62" y2="-182.88" width="0.1524" layer="91"/>
 <pinref part="I2C" gate="A" pin="3"/>
 <wire x1="27.94" y1="-185.42" x2="5.08" y2="-185.42" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="-185.42" x2="5.08" y2="-182.88" width="0.1524" layer="91"/>
-<junction x="5.08" y="-182.88"/>
 </segment>
 <segment>
 <pinref part="3.3V_CONF" gate="G$1" pin="GND"/>
@@ -23980,6 +23971,15 @@ Created by Yingchun,Shan&lt;br&gt;
 <pinref part="C15" gate="G$1" pin="2"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="91.44" y1="38.1" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C20" gate="G$1" pin="2"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="116.84" y1="-170.18" x2="119.38" y2="-170.18" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="116.84" y1="-162.56" x2="119.38" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-162.56" x2="119.38" y2="-170.18" width="0.1524" layer="91"/>
+<junction x="119.38" y="-170.18"/>
 </segment>
 </net>
 <net name="V+" class="0">
@@ -24027,26 +24027,6 @@ Created by Yingchun,Shan&lt;br&gt;
 <junction x="63.5" y="-68.58"/>
 <wire x1="63.5" y1="-53.34" x2="71.12" y2="-53.34" width="0.1524" layer="91"/>
 <junction x="71.12" y="-53.34"/>
-</segment>
-<segment>
-<pinref part="C18" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="-162.56" x2="111.76" y2="-162.56" width="0.1524" layer="91"/>
-<pinref part="+3V7" gate="G$1" pin="+3V3"/>
-<wire x1="111.76" y1="-154.94" x2="111.76" y2="-162.56" width="0.1524" layer="91"/>
-<pinref part="MPU6050" gate="G$1" pin="VDD"/>
-<wire x1="111.76" y1="-162.56" x2="109.22" y2="-162.56" width="0.1524" layer="91"/>
-<junction x="111.76" y="-162.56"/>
-<pinref part="MPU6050" gate="G$1" pin="VLOGIC"/>
-<pinref part="C20" gate="G$1" pin="1"/>
-<wire x1="109.22" y1="-162.56" x2="99.06" y2="-162.56" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-165.1" x2="109.22" y2="-165.1" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-165.1" x2="109.22" y2="-162.56" width="0.1524" layer="91"/>
-<junction x="109.22" y="-165.1"/>
-<junction x="109.22" y="-162.56"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="134.62" y1="-165.1" x2="134.62" y2="-162.56" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="-162.56" x2="121.92" y2="-162.56" width="0.1524" layer="91"/>
-<junction x="121.92" y="-162.56"/>
 </segment>
 <segment>
 <pinref part="C33" gate="G$1" pin="1"/>
@@ -24138,6 +24118,25 @@ Created by Yingchun,Shan&lt;br&gt;
 <wire x1="142.24" y1="50.8" x2="134.62" y2="50.8" width="0.1524" layer="91"/>
 <junction x="134.62" y="50.8"/>
 </segment>
+<segment>
+<pinref part="MPU6050" gate="G$1" pin="VDD"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="-162.56" x2="104.14" y2="-162.56" width="0.1524" layer="91"/>
+<pinref part="+3V7" gate="G$1" pin="+3V3"/>
+<wire x1="104.14" y1="-162.56" x2="109.22" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-154.94" x2="104.14" y2="-160.02" width="0.1524" layer="91"/>
+<junction x="104.14" y="-162.56"/>
+<wire x1="104.14" y1="-160.02" x2="104.14" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-170.18" x2="106.68" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-160.02" x2="104.14" y2="-160.02" width="0.1524" layer="91"/>
+<junction x="104.14" y="-160.02"/>
+<pinref part="C20" gate="G$1" pin="1"/>
+<wire x1="109.22" y1="-170.18" x2="106.68" y2="-170.18" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-170.18" x2="99.06" y2="-170.18" width="0.1524" layer="91"/>
+<junction x="106.68" y="-170.18"/>
+<pinref part="MPU6050" gate="G$1" pin="VLOGIC"/>
+<wire x1="99.06" y1="-170.18" x2="99.06" y2="-165.1" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -24194,9 +24193,9 @@ Created by Yingchun,Shan&lt;br&gt;
 <pinref part="C11" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<wire x1="111.76" y1="-116.84" x2="116.84" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-116.84" x2="119.38" y2="-119.38" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
-<wire x1="111.76" y1="-116.84" x2="111.76" y2="-106.68" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-116.84" x2="116.84" y2="-111.76" width="0.1524" layer="91"/>
 <pinref part="RGB_LED" gate="G$1" pin="1"/>
 </segment>
 <segment>
@@ -24413,12 +24412,6 @@ Created by Yingchun,Shan&lt;br&gt;
 </segment>
 </net>
 <net name="BOOT0" class="0">
-<segment>
-<pinref part="STM32F103CB" gate="G$1" pin="BOOT0"/>
-<wire x1="213.36" y1="10.16" x2="213.36" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="213.36" y1="35.56" x2="220.98" y2="35.56" width="0.1524" layer="91"/>
-<label x="220.98" y="35.56" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="106.68" y1="-15.24" x2="104.14" y2="-15.24" width="0.1524" layer="91"/>
 <label x="93.98" y="-15.24" size="1.778" layer="95"/>
@@ -24659,21 +24652,21 @@ Created by Yingchun,Shan&lt;br&gt;
 </net>
 <net name="N$31" class="0">
 <segment>
-<wire x1="116.84" y1="-127" x2="109.22" y2="-127" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-127" x2="109.22" y2="-129.54" width="0.1524" layer="91"/>
 <pinref part="R26" gate="G$1" pin="2"/>
 <pinref part="RGB_LED" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="N$33" class="0">
 <segment>
-<wire x1="116.84" y1="-124.46" x2="109.22" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-124.46" x2="109.22" y2="-121.92" width="0.1524" layer="91"/>
 <pinref part="R27" gate="G$1" pin="2"/>
 <pinref part="RGB_LED" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="N$35" class="0">
 <segment>
-<wire x1="116.84" y1="-121.92" x2="109.22" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-121.92" x2="109.22" y2="-114.3" width="0.1524" layer="91"/>
 <pinref part="R28" gate="G$1" pin="2"/>
 <pinref part="RGB_LED" gate="G$1" pin="2"/>
 </segment>
@@ -24682,28 +24675,28 @@ Created by Yingchun,Shan&lt;br&gt;
 <segment>
 <pinref part="MOTOR_L_F" gate="G$1" pin="2"/>
 <pinref part="L_L293DD" gate="G$1" pin="OUT4"/>
-<wire x1="2.54" y1="-40.64" x2="-7.62" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="0" y1="-40.64" x2="-7.62" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="MOTOR_L_F" gate="G$1" pin="1"/>
 <pinref part="L_L293DD" gate="G$1" pin="OUT3"/>
-<wire x1="2.54" y1="-38.1" x2="-7.62" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="0" y1="-38.1" x2="-7.62" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="MOTOR_L_B" gate="G$1" pin="2"/>
 <pinref part="L_L293DD" gate="G$1" pin="OUT2"/>
-<wire x1="2.54" y1="-27.94" x2="-7.62" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="0" y1="-27.94" x2="-7.62" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="MOTOR_L_B" gate="G$1" pin="1"/>
 <pinref part="L_L293DD" gate="G$1" pin="OUT1"/>
-<wire x1="2.54" y1="-25.4" x2="-7.62" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="0" y1="-25.4" x2="-7.62" y2="-25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LIDAR_POS_INT" class="0">
@@ -24736,7 +24729,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <segment>
 <pinref part="PCA9533" gate="G$1" pin="LED2"/>
 <pinref part="R26" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="-127" x2="93.98" y2="-127" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-129.54" x2="93.98" y2="-127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$23" class="0">
@@ -24750,7 +24743,7 @@ Created by Yingchun,Shan&lt;br&gt;
 <segment>
 <pinref part="PCA9533" gate="G$1" pin="LED0"/>
 <pinref part="R28" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="-116.84" x2="93.98" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-114.3" x2="93.98" y2="-116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -24927,6 +24920,13 @@ Created by Yingchun,Shan&lt;br&gt;
 <pinref part="R_L293DD" gate="G$1" pin="OUT3"/>
 <pinref part="MOTOR_R_F" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="-111.76" x2="2.54" y2="-114.3" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="STM32F103CB" gate="G$1" pin="BOOT0"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="210.82" y1="12.7" x2="213.36" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
