@@ -23213,8 +23213,8 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B4B-ZR(LF)(SN
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
-<part name="C36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="7pf"/>
-<part name="C37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="7pf"/>
+<part name="C36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="22pf"/>
+<part name="C37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="22pf"/>
 <part name="R30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100k"/>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -24091,15 +24091,15 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B4B-ZR(LF)(SN
 <wire x1="66.04" y1="-104.14" x2="50.8" y2="-104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="-2.54" y1="-147.32" x2="7.62" y2="-147.32" width="0.1524" layer="91"/>
-<label x="10.16" y="-147.32" size="1.778" layer="95"/>
-<wire x1="-2.54" y1="-147.32" x2="-2.54" y2="-165.1" width="0.1524" layer="91"/>
-<pinref part="I2C" gate="A" pin="2"/>
-<wire x1="-2.54" y1="-165.1" x2="15.24" y2="-165.1" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="SCL/SCLK"/>
 <wire x1="60.96" y1="-170.18" x2="50.8" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="2.54" y1="-149.86" x2="7.62" y2="-149.86" width="0.1524" layer="91"/>
+<label x="10.16" y="-149.86" size="1.778" layer="95"/>
+<pinref part="I2C" gate="A" pin="1"/>
+<wire x1="15.24" y1="-162.56" x2="2.54" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="-162.56" x2="2.54" y2="-149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -24123,15 +24123,15 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/2/B4B-ZR(LF)(SN
 <wire x1="66.04" y1="-109.22" x2="50.8" y2="-109.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="2.54" y1="-149.86" x2="7.62" y2="-149.86" width="0.1524" layer="91"/>
-<label x="10.16" y="-149.86" size="1.778" layer="95"/>
-<pinref part="I2C" gate="A" pin="1"/>
-<wire x1="15.24" y1="-162.56" x2="2.54" y2="-162.56" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="-162.56" x2="2.54" y2="-149.86" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="SDA/SDI"/>
 <wire x1="60.96" y1="-175.26" x2="50.8" y2="-175.26" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-2.54" y1="-147.32" x2="7.62" y2="-147.32" width="0.1524" layer="91"/>
+<label x="10.16" y="-147.32" size="1.778" layer="95"/>
+<wire x1="-2.54" y1="-147.32" x2="-2.54" y2="-165.1" width="0.1524" layer="91"/>
+<pinref part="I2C" gate="A" pin="2"/>
+<wire x1="-2.54" y1="-165.1" x2="15.24" y2="-165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+8V" class="0">
